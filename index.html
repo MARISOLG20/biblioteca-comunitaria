@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Biblioteca Comunitaria</title>
+  <meta name="description" content="Libros, socios y préstamos de tu biblioteca comunitaria.">
+  <meta name="theme-color" content="#1E3B34">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Biblioteca">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <div>
+        <h1 id="nombre">Biblioteca comunitaria</h1>
+        <p id="resumen" class="sub"></p>
+      </div>
+      <button id="instalar" class="btn-instalar" hidden>Instalar</button>
+    </div>
+  </header>
+
+  <main id="vista" tabindex="-1"></main>
+
+  <button id="fab" class="fab" aria-label="Agregar">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+  </button>
+
+  <nav class="tabs" aria-label="Secciones">
+    <a href="#/inicio" data-tab="inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg>Préstamos<b id="vencidos" hidden></b></a>
+    <a href="#/libros" data-tab="libros"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3v13H5zM10 6h3v11h-3zM15.2 5.2l2.8-.8 3 12.4-2.8.8zM3 20h18"/></svg>Libros</a>
+    <a href="#/socios" data-tab="socios"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M16 5.3a3 3 0 010 5.4M18 14.8c1.8.7 3 2.4 3 5.2"/></svg>Socios</a>
+    <a href="#/informe" data-tab="informe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>Informe</a>
+    <a href="#/mas" data-tab="mas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="18" cy="12" r="1.4"/></svg>Más</a>
+  </nav>
+
+  <dialog id="hoja"></dialog>
+  <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+  <input id="archivo" type="file" accept="application/json" hidden>
+
+  <script src="app.js"></script>
+</body>
+</html>
